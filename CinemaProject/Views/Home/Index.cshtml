@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@* @using CinemaProject.Data.Entities; *@
+@model List<CinemaProject.Data.Entities.Movie>;
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to your local cinema!</h1>
+    <h4>What to watch:</h4>
+
+    @foreach (var item in Model)
+    {
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card w-25 bg-black">
+                    <img src="@item.ImageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.TicketPrice</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Movies";
+}
+
+@* @using CinemaProject.Data.Entities; *@
+@model List<CinemaProject.Data.Entities.Movie>;
+
+<h2>Movie List</h2>
+
+<p>Manage movies in this list...</p>
+
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Ticket</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <th scope="row">@i.Id</th>
+                <td>@i.Name</td>
+                <td>@i.TicketPrice$</td>
+                <td>
+                    @if (i.IsAvailable)
+                    {
+                        <span class="badge bg-success">Available</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Not available</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="text-center">Movie count: @Model.Count</p>
