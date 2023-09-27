@@ -21,7 +21,7 @@
     <tbody>
         @foreach (var i in Model)
         {
-            <tr>
+            <tr class="align-middle">
                 <th scope="row">@i.Id</th>
                 <td>@i.Name</td>
                 <td>@i.TicketPrice$</td>
@@ -34,6 +34,13 @@
                     {
                         <span class="badge bg-secondary">Not available</span>
                     }
+                </td>
+                <td>
+                    <div class="btn-group m-0" role="group" aria-label="Basic mixed styles example">
+                        <a asp-action="Create" asp-route-id="@i.Id" class="btn btn-secondary">Create</a>
+                        <a asp-action="Edit" asp-route-id="@i.Id" class="btn btn-light">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@i.Id" class="btn btn-danger">Delete</a>
+                    </div>
                 </td>
             </tr>
         }

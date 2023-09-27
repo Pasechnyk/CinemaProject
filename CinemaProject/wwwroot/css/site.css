@@ -60,3 +60,7 @@ header.changed
     background-color: black;
     color: white;
 }
+
+.transparent {
+    background-color: rgba(214, 176, 176, 0.314) !important;
+}
