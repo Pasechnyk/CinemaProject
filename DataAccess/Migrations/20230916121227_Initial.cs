@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace CinemaProject.Migrations
+namespace DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

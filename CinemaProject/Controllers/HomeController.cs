@@ -1,18 +1,18 @@
-﻿using CinemaProject.Data;
+﻿using DataAccess.Data;
 using CinemaProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 
 namespace CinemaProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        CinemaDbContext context = new CinemaDbContext();
+        private readonly CinemaDbContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(CinemaDbContext context)
         {
-            _logger = logger;
+            this.context = context;
         }
 
         public IActionResult Index()

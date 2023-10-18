@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace CinemaProject.Migrations
+namespace DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddDescription : Migration

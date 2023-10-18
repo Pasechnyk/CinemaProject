@@ -1,36 +1,40 @@
-﻿@model CinemaProject.Data.Entities.Movie;
+﻿@model DataAccess.Data.Entities.Movie;
 
 <h1>Add new movie...</h1>
 
 <form asp-action="Create" method="post" class="row g-3">
     <div class="col-5 m-5">
         <label asp-for="Name" class="form-label text-white">Name</label>
-        <input asp-for="Name" type="text" class="form-control transparent" placeholder="Enter name">
+        <input asp-for="Name" type="text" class="form-control transparent text-white" placeholder="Enter name">
+        <span asp-validation-for="Name" class="form-text text-danger"></span>
     </div>
     <div class="col-5 m-5">
         <label asp-for="TicketPrice" class="form-label text-white">Price</label>
-        <input asp-for="TicketPrice" type="number" class="form-control transparent" placeholder="Enter price">
+        <input asp-for="TicketPrice" type="number" class="form-control transparent text-white" placeholder="Enter price">
+        <span asp-validation-for="TicketPrice" class="form-text text-danger"></span>
     </div>
     <div class="col-11 m-5">
         <label asp-for="Description" class=" form-label text-white">Description</label>
-        <textarea asp-for="Description" class="form-control transparent" rows="3" placeholder="Enter description"></textarea>
+        <textarea asp-for="Description" class="form-control transparent text-white" rows="3" placeholder="Enter description"></textarea>
+        <span asp-validation-for="Description" class="form-text text-danger"></span>
     </div>
     <div class="col-3 m-5">
-        <label asp-for="GenreId" class="form-label text-white">State</label>
-        <select asp-for="GenreId" asp-items="@ViewBag.Categories" class="form-select transparent">
+        <label asp-for="GenreId" class="form-label text-white">Section</label>
+        <select asp-for="GenreId" asp-items="@ViewBag.Categories" class="form-select transparent text-white">
             <option disabled selected>Choose category...</option>
         </select>
+        <span asp-validation-for="GenreId" class="form-text text-danger"></span>
     </div>
     <div class="col-3 m-5">
         <label asp-for="ImageUrl" class="form-label text-white">Image URL</label>
-        <input asp-for="ImageUrl" type="url" class="form-control transparent" placeholder="Enter image URL address">
+        <input asp-for="ImageUrl" type="url" class="form-control transparent text-white" placeholder="Enter image URL address">
+        <span asp-validation-for="ImageUrl" class="form-text text-danger"></span>
     </div>
     <div class="col-2 m-5">
         <div class="form-check">
             <input asp-for="IsAvailable" class="form-check-input transparent" type="checkbox">
-            <label asp-for="IsAvailable" class="form-check-label text-white">
-                In Stock
-            </label>
+            <label asp-for="IsAvailable" class="form-check-label text-white">Is Available</label>
+            <span asp-validation-for="IsAvailable" class="form-text text-danger"></span>
         </div>
     </div>
     <div class="col-5 m-5">

@@ -1,9 +1,43 @@
+using DataAccess.Data;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using DataAccess.Data.Entities;
+using CinemaProject.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
+
+string connStr = builder.Configuration.GetConnectionString("LocalDb");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<CinemaDbContext>(opts => opts.UseSqlServer(connStr));
+
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+})
+    .AddDefaultTokenProviders()
+    .AddDefaultUI()
+    .AddEntityFrameworkStores<CinemaDbContext>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
+
+// Seed
+using (IServiceScope scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    // seed roles
+    SeedExtensions.SeedRoles(serviceProvider).GetAwaiter().GetResult();
+
+    // seed admin
+    SeedExtensions.SeedAdmin(serviceProvider).Wait();
+}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -18,7 +52,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
+
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
