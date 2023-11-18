@@ -25,6 +25,15 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromDays(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 // Seed
@@ -37,7 +46,6 @@ using (IServiceScope scope = app.Services.CreateScope())
     // seed admin
     SeedExtensions.SeedAdmin(serviceProvider).Wait();
 }
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
