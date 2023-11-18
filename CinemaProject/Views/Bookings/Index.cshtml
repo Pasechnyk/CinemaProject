@@ -1,0 +1,9 @@
+﻿@using DataAccess.Data.Entities;
+@model List<Booking>
+
+<ul class="list-group">
+    @foreach (var i in Model)
+    {
+        <li class="list-group-item">[@i.Id] - @i.Date - Total Price: @i.TotalPrice$</li>
+    }
+</ul>
