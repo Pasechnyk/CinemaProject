@@ -25,8 +25,8 @@ namespace CinemaProject.Helpers
         {
             var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
 
-            const string USERNAME = "admin@myadmin.com";
-            const string PASSWORD = "Admin15@";
+            const string USERNAME = "admin@mail.com";
+            const string PASSWORD = "Admin1@";
 
             var existingUser = await userManager.FindByNameAsync(USERNAME);
 
