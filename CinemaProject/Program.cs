@@ -8,7 +8,7 @@ using CinemaProject.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connStr = builder.Configuration.GetConnectionString("LocalDb");
+string connStr = builder.Configuration.GetConnectionString("CinemaProjectDb");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
