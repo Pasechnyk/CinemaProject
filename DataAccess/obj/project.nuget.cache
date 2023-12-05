@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jlr654Kq2Bf3SngYOm+iXZkseG3ivu/qBt3xzlz5g+msQacxDwweoRPZZyFVw6IhzZ2fD2bCi5l8eaMGARQgQA==",
+  "dgSpecHash": "6Rpy9jb4uqSJV12tuGTYblS5cMyy5/bq0B9gxVN0v8C35MeiF7rlx1CeJvC9KLSWfC3GjfnPjOOGBqqlfwmwsA==",
   "success": true,
-  "projectFilePath": "D:\\ASP.Net\\CinemaProject\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "D:\\CinemaProject-master\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dev\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\dev\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

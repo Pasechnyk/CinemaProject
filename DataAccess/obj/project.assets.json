@@ -3126,11 +3126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP.Net\\CinemaProject\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\CinemaProject-master\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\ASP.Net\\CinemaProject\\DataAccess\\DataAccess.csproj",
+      "projectPath": "D:\\CinemaProject-master\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\dev\\.nuget\\packages\\",
-      "outputPath": "D:\\ASP.Net\\CinemaProject\\DataAccess\\obj\\",
+      "outputPath": "D:\\CinemaProject-master\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
