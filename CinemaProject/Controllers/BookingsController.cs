@@ -4,6 +4,7 @@ using DataAccess.Data.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Text;
 
 namespace CinemaProject.Controllers
 {
@@ -44,6 +45,27 @@ namespace CinemaProject.Controllers
             HttpContext.Session.Remove(Constants.cartItemsKey);
 
             return RedirectToAction("Index");
+        }
+
+        // Export order data
+        public IActionResult ExportOrder(int bookingId)
+        {
+            var orderDetails = context.Bookings
+                .FirstOrDefault(b => b.Id == bookingId);
+
+            if (orderDetails == null)
+            {
+                return NotFound();
+            }
+
+            var fileContent = $"Order ID: {orderDetails.Id}\nDate: {orderDetails.Date}\nTotal Price: {orderDetails.TotalPrice}$";
+            var fileBytes = Encoding.UTF8.GetBytes(fileContent);
+
+            var contentType = "text/plain";
+            var fileName = $"Order #{orderDetails.Id}.txt";
+
+
+            return File(fileBytes, contentType, fileName);
         }
     }
 }

@@ -4,6 +4,31 @@
 <ul class="list-group">
     @foreach (var i in Model)
     {
-        <li class="list-group-item">[@i.Id] - @i.Date - Total Price: @i.TotalPrice$</li>
+        <li class="list-group-item">
+            [@i.Id] - @i.Date - Total Price: @i.TotalPrice$
+            <a asp-controller="Bookings" asp-action="ExportOrder" asp-route-bookingId="@i.Id" class="btn btn-sm btn-primary ml-2 export-button">Export</a>
+        </li>
     }
 </ul>
+
+<script>
+    $(document).ready(function () {
+        $('.export-button').click(function () {
+            var bookingId = $(this).data('booking-id');
+            exportOrder(bookingId);
+        });
+    });
+
+    function exportOrder(bookingId) {
+        $.ajax({
+            url: `/Bookings/ExportOrder?bookingId=${bookingId}`,
+            method: 'GET',
+            success: function () {
+                alert('Order exported successfully!');
+            },
+            error: function () {
+                alert('Error exporting order.');
+            }
+        });
+    }
+</script>
