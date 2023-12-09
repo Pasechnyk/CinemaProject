@@ -41,6 +41,7 @@
                         <div class="card-description text-white">
                             <p>@Model[i].Description</p>
                             <p class="card-text">Ticket price: @Model[i].TicketPrice</p>
+                            <a asp-controller="Cart" asp-action="Add" asp-route-id="@Model[i].Id" class="m-4 btn btn-outline-light">Make a reservation</a>
                         </div>
                     </div>
                 </div>

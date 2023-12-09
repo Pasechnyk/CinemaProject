@@ -4,9 +4,9 @@
 <ul class="list-group">
     @foreach (var i in Model)
     {
-        <li class="list-group-item">
+        <li class="list-group-item bg-black text-white border-bottom border-danger">
             [@i.Id] - @i.Date - Total Price: @i.TotalPrice$
-            <a asp-controller="Bookings" asp-action="ExportOrder" asp-route-bookingId="@i.Id" class="btn btn-sm btn-primary ml-2 export-button">Export</a>
+            <a asp-controller="Bookings" asp-action="ExportOrder" asp-route-bookingId="@i.Id" class="bg-black text-white btn btn-sm btn-danger ml-2 export-button">Print</a>
         </li>
     }
 </ul>
