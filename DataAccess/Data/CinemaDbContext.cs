@@ -12,9 +12,11 @@ namespace DataAccess.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer("Server=tcp:paseserver.database.windows.net,1433;Initial Catalog=CinemaProjectDb;Persist Security Info=False;User ID=paseadmin;Password=pase_123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", builder =>
+            {
+                builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+            });
             base.OnConfiguring(optionsBuilder);
-
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DataAccess;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

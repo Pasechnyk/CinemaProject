@@ -54,3 +54,17 @@ D:\CinemaProject-master\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
 D:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.pdb
 D:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.genruntimeconfig.cache
 D:\CinemaProject-master\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
+F:\CinemaProject-master\DataAccess\bin\Debug\net7.0\DataAccess.deps.json
+F:\CinemaProject-master\DataAccess\bin\Debug\net7.0\DataAccess.runtimeconfig.json
+F:\CinemaProject-master\DataAccess\bin\Debug\net7.0\DataAccess.dll
+F:\CinemaProject-master\DataAccess\bin\Debug\net7.0\DataAccess.pdb
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.csproj.AssemblyReference.cache
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfoInputs.cache
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfo.cs
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CoreCompileInputs.cache
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.dll
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.pdb
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\DataAccess.genruntimeconfig.cache
+F:\CinemaProject-master\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
